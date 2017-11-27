@@ -9,6 +9,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using FashionWebStoreApp.Entities;
 using Microsoft.EntityFrameworkCore;
+using FashionWebStoreApp.Repositories;
+using FashionWebStoreApp.Services;
 
 namespace FashionWebStoreApp
 {
@@ -17,6 +19,9 @@ namespace FashionWebStoreApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddScoped<FashionStoreContext>();
+            services.AddScoped<FashionStoreRepository>();
+            services.AddScoped<FashionStoreService>();
             services.AddDbContext<FashionStoreContext>(options => options.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=warehousemaster;Integrated Security=True;Connect Timeout=30"));
         }
 
