@@ -25,5 +25,17 @@ namespace FashionWebStoreApp.Repositories
         {
             return FashionStoreContext.Warehouses.Where(x => x.UnitPrice < 50).ToList();
         }
+
+        public int GetAmountOfSelectedItem(string itemName)
+        {
+            int quantity;
+            return quantity = FashionStoreContext.Warehouses.Count(x => x.ItemName.Equals(itemName));          
+        }
+
+        public double GetTotalPriceOfSelectedItem(string itemName)
+        {
+            double totalprice;
+            return totalprice = FashionStoreContext.Warehouses.Where(x => x.ItemName.Equals(itemName)).Sum(x => x.UnitPrice);
+        }
     }
 }
