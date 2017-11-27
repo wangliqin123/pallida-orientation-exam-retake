@@ -6,11 +6,11 @@
 <body>
     <h1>Green Fox Fashion Web Store</h1>
     @Html.DropDownList("Select item name", new SelectList(Model.Select(x => x.ItemName).Distinct()))
+    <input type="submit" value="Select" />
     @Html.DropDownList("Select item size", new SelectList(Model.Select(x => x.Size).Distinct()))
     <form action="/warehouse/summary" method="post">
         <label for="Amount"></label>
-        <input type="number" name="amount" value="" /><br />
-        <br><button type="submit">Get Total</button>
+        <input type="number" name="amount" value="" /><button type="submit">Get Total</button><br />      
     </form>
     <table border="1">
         <tr>

@@ -21,9 +21,9 @@ namespace FashionWebStoreApp.Controllers
 
         [HttpPost]
         [Route("/warehouse/summary")]
-        public IActionResult Summary(int amount)
+        public IActionResult Summary(int amount, string selectedItem, string selectedSize)
         {
-            return View();
+            return View(FashionStoreService.GetSelectedItemInfo(amount, selectedItem, selectedSize));
         }
 
         [HttpGet]

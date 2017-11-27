@@ -37,6 +37,12 @@ namespace FashionWebStoreApp.Repositories
             }
         }
 
+        public List<Warehouse> GetSelectedItem(int amount, string selectedItem, string selectedSize)
+        {
+
+            return FashionStoreContext.Warehouses.Where(x => x.ItemName.Equals(selectedItem) && x.Size.Equals(selectedSize)).ToList();
+        }
+
         public int GetAmountOfSelectedItem(string itemName)
         {
             int quantity;
