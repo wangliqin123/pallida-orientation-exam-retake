@@ -1,0 +1,2 @@
+Code to be shared.
+Default behaviour in methods, but want users of your class to be able to override it.
