@@ -20,5 +20,10 @@ namespace FashionWebStoreApp.Repositories
         {
             return FashionStoreContext.Warehouses.ToList();
         }
+
+        public List<Warehouse> GetClothesWithUnitPriceLowerThan50()
+        {
+            return FashionStoreContext.Warehouses.Where(x => x.UnitPrice < 50).ToList();
+        }
     }
 }

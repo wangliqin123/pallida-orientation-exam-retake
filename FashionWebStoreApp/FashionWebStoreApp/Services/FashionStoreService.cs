@@ -20,5 +20,10 @@ namespace FashionWebStoreApp.Services
         {
             return FashionStoreRepository.GetAllItemList();
         }
+
+        public List<Warehouse> GetWarehouseItemListApi()
+        {
+            return FashionStoreRepository.GetClothesWithUnitPriceLowerThan50();
+        }
     }
 }
