@@ -1,2 +1,8 @@
+These ara the benefits to using an abstract class:
 Code to be shared.
 Default behaviour in methods, but want users of your class to be able to override it.
+A class can implement any number of interfaces but a subclass can at most use only one abstract class.
+An abstract class can have non-abstract Methods(concrete methods).	
+An abstract class can declare or use any variables.
+An abstract class can have constructor declaration.
+An abstract Class is allowed to have all access modifiers for all of its member declaration.
