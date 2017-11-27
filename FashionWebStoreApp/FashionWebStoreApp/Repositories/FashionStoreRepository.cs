@@ -1,9 +1,7 @@
 ﻿using FashionWebStoreApp.Entities;
 using FashionWebStoreApp.Models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace FashionWebStoreApp.Repositories
 {
@@ -53,8 +51,6 @@ namespace FashionWebStoreApp.Repositories
         {
             double totalprice;
             return totalprice = FashionStoreContext.Warehouses.Where(x => x.ItemName.Equals(itemName)).Sum(x => x.UnitPrice);
-        }
-
-     
+        }    
     }
 }
