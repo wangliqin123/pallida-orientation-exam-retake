@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using FashionWebStoreApp.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace FashionWebStoreApp
 {
@@ -15,6 +17,7 @@ namespace FashionWebStoreApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddDbContext<FashionStoreContext>(options => options.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=warehousemaster;Integrated Security=True;Connect Timeout=30"));
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
