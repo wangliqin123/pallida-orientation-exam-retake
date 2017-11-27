@@ -21,9 +21,20 @@ namespace FashionWebStoreApp.Repositories
             return FashionStoreContext.Warehouses.ToList();
         }
 
-        public List<Warehouse> GetClothesWithUnitPriceLowerThan50()
+        public List<Warehouse> GetClothesListJson(int price, string type)
         {
-            return FashionStoreContext.Warehouses.Where(x => x.UnitPrice < 50).ToList();
+            if (type.Equals("lower"))
+            {
+                return FashionStoreContext.Warehouses.Where(x => x.UnitPrice < price).ToList();
+            }
+            else if (type.Equals("higher"))
+            {
+                return FashionStoreContext.Warehouses.Where(x => x.UnitPrice > price).ToList();
+            }
+            else
+            {
+                return FashionStoreContext.Warehouses.Where(x => x.UnitPrice.Equals(price)).ToList();
+            }
         }
 
         public int GetAmountOfSelectedItem(string itemName)
@@ -37,5 +48,7 @@ namespace FashionWebStoreApp.Repositories
             double totalprice;
             return totalprice = FashionStoreContext.Warehouses.Where(x => x.ItemName.Equals(itemName)).Sum(x => x.UnitPrice);
         }
+
+     
     }
 }

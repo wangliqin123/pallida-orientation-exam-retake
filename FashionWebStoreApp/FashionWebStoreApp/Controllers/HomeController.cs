@@ -23,18 +23,18 @@ namespace FashionWebStoreApp.Controllers
             return View(FashionStoreService.GetWarehouseItemList());
         }
 
-        //[HttpPost]
-        //[Route("/warehouse/summary")]
-        //public IActionResult Summary()
-        //{
-        //    return View();
-        //}
+        [HttpPost]
+        [Route("/warehouse/summary")]
+        public IActionResult Summary(int amount)
+        {
+            return View();
+        }
 
         [HttpGet]
         [Route("/warehouse/query")]
-        public IActionResult ApiQuery([FromQuery] int price, string type)
+        public IActionResult ApiQuery([FromQuery]int price, [FromQuery]string type)
         {
-            return Json(new { result = "ok", clothes = FashionStoreService.GetWarehouseItemListApi()});
+            return Json(new { result = "ok", clothes = FashionStoreService.GetWarehouseItemListApi(price, type)});
         }
 
 
