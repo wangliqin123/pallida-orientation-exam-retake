@@ -1,4 +1,4 @@
-﻿@model List<FashionWebStoreApp.Models.Warehouse>
+﻿@model FashionWebStoreApp.Models.Warehouse
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title></title>
@@ -13,14 +13,15 @@
             <td>Quantity</td>
             <td>Sub-total Price</td>
         </tr>
-        @foreach (var item in Model)
-        {
+
             <tr>
-                <td>@item.ItemName</td>
-                <td>@item.Manufacturer</td>
-                <td>@item.Category</td>
+                <td>@Model.ItemName</td>
+                <td>@Model.Manufacturer</td>
+                <td>@Model.Category</td>
+                <td></td>
+                <td></td>
             </tr>
-        }
+
     </table>
     <br /><h><a href="/warehouse">Back to main</a></h>
 </body>
