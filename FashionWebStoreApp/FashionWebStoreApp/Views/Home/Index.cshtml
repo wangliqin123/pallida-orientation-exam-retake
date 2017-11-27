@@ -7,7 +7,9 @@
     <h1>Green Fox Fashion Web Store</h1>
     <form action="/warehouse/summary" method="post">
         @Html.DropDownList("Select item name", new SelectList(Model.Select(x => x.ItemName).Distinct()))
+        <input type="hidden" value="ItemName" />
         @Html.DropDownList("Select item size", new SelectList(Model.Select(x => x.Size).Distinct()))
+        <input type="hidden" value="Size" />
         <label for="Amount"></label>
         <input type="text" name="amount"/><button type="submit">Get Total</button><br />
     </form>

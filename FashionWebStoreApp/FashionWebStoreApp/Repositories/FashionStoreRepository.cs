@@ -35,7 +35,7 @@ namespace FashionWebStoreApp.Repositories
             }
         }
 
-        public Warehouse GetSelectedItem(int amount, string selectedItem)
+        public Warehouse GetSelectedItem(string selectedItem)
         {
             return FashionStoreContext.Warehouses.FirstOrDefault(x => x.ItemName.Equals(selectedItem));
         } 

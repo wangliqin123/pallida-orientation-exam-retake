@@ -23,9 +23,9 @@ namespace FashionWebStoreApp.Services
             return FashionStoreRepository.GetClothesListJson(price, type);
         }
 
-        public Warehouse GetSelectedItemInfo(int amount, string selectedItem)
+        public Warehouse GetSelectedItemInfo(string selectedItem)
         {
-            return FashionStoreRepository.GetSelectedItem(amount, selectedItem);
+            return FashionStoreRepository.GetSelectedItem(selectedItem);
         }
     }
 }
