@@ -28,13 +28,13 @@ namespace FashionWebStoreAppIntegrationTests
         }
 
         [Fact]
-        public async Task ReturnExpectedResponse()
+        public async Task ReturnOkStatusApi()
         {
-            var response = await Client.GetAsync("//warehouse/query?price=50&type=lower");
+            var response = await Client.GetAsync("/warehouse/query?price=50&type=lower");
 
-            var responseJson = await response.Content.ReadAsStringAsync();
+            string responseJson = await response.Content.ReadAsStringAsync();
 
-            Assert.Equal("{\"result\":\"ok\",\"clothes\":\"I am Groot!\"}", responseJson);
+            Assert.Equal(HttpStatusCode.OK, response.StatusCode);
         }
     }
 }
