@@ -5,6 +5,8 @@
 </head>
 <body>
     <h1>Green Fox Fashion Web Store</h1>
+    @Html.DropDownList("Select item name", new SelectList(Model.Select(x => x.ItemName).Distinct()))
+    @Html.DropDownList("Select item size", new SelectList(Model.Select(x => x.Size).Distinct()))
     <form action="/warehouse/summary" method="post">
         <label for="Amount"></label>
         <input type="number" name="amount" value="" /><br />

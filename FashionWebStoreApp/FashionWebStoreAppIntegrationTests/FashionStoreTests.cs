@@ -27,5 +27,15 @@ namespace FashionWebStoreAppIntegrationTests
 
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);
         }
+
+        [Fact]
+        public async Task ReturnExpectedResponse()
+        {
+            var response = await Client.GetAsync("//warehouse/query?price=50&type=lower");
+
+            var responseJson = await response.Content.ReadAsStringAsync();
+
+            Assert.Equal("{\"result\":\"ok\",\"clothes\":\"I am Groot!\"}", responseJson);
+        }
     }
 }

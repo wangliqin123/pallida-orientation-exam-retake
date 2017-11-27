@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using FashionWebStoreApp.Services;
 
 namespace FashionWebStoreApp.Controllers
@@ -36,7 +32,5 @@ namespace FashionWebStoreApp.Controllers
         {
             return Json(new { result = "ok", clothes = FashionStoreService.GetWarehouseItemListApi(price, type)});
         }
-
-
     }
 }
