@@ -1,0 +1,28 @@
+﻿@model List<FashionWebStoreApp.Models.Warehouse>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <h1>Green Fox Fashion Web Store</h1>
+    <table border="1">
+        <tr>
+            <td>Item Name</td>
+            <td>Manufacturer</td>
+            <td>Category</td>
+            <td>Size</td>
+            <td>Unit Price</td>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ItemName</td>
+                <td>@item.Manufacturer</td>
+                <td>@item.Category</td>
+                <td>@item.Size</td>
+                <td>@item.UnitPrice</td>
+            </tr>
+        }
+    </table>
+</body>
+</html>

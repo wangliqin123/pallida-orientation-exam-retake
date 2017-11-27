@@ -18,7 +18,7 @@ namespace FashionWebStoreApp.Services
 
         public List<Warehouse> GetWarehouseItemList()
         {
-            return FashionStoreService
+            return FashionStoreRepository.GetAllItemList();
         }
     }
 }
